@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body >
+<div id="loading">
+    <img id="loading-image" src="loading.gif" alt="Loading..."/>
+</div>
+<div class="container">
+    <div class="qwer text-center">
+        <p>Welcome to QuizLand
+        <p id="demo"></p></p>
+    </div>
+    <div class="login">
+        <p id="register">Registration :</p>
+        <button style="color: black; width: 91px;" onclick="myFunction()" class=" btn btn-success bg-white">Login
+        </button>
+        <br><br>
+        <p id="demo"></p>
+    </div>
+
+    <div class="text-center choose">
+        <p>Please, set the settings</p>
+
+        <div>
+            <p>Choose the subject</p>
+            <a class="subject" onclick="getSubject(this)" data-name="math" href="javascript:;">Math</a>
+            <a class="subject" onclick="getSubject(this)" data-name="physics" href="javascript:;">Physics</a>
+            <a class="subject" onclick="getSubject(this)" data-name="computer_science" href="javascript:;">Computer
+                Science</a>
+        </div>
+        <br><br>
+        <div>
+            <p>Choose the dificulty</p>
+            <a class="difficulty" onclick="getDifficulty(this)" data-name="hard" href="javascript:;">HARD</a>
+            <a class="difficulty" onclick="getDifficulty(this)" data-name="normal" href="javascript:;">Normal</a>
+            <a class="difficulty" onclick="getDifficulty(this)" data-name="easy" href="javascript:;">Easy</a>
+
+        </div>
+        <button style="margin-bottom: 50px;" id="start" class="glow-on-hover" onclick="getPage()" type="button">START!
+        </button>
+    </div>
+</div>
+<div class="footer-social-links">
+  <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="#" title="Google+" target="_blank"><i class="fa fa-google-plus"></i></a>
+  <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

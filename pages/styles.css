@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #333;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    background-color: lightblue;
+    margin: unset;
+}
+
+h1 {
+
+    flex-direction: column;
+    font-size: 50px;
+    color: #000;
+}
+
+#header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+}
+
+.quiz-container {
+    position: relative;
+    width: 70%;
+    margin: 40px auto 0 auto;
+    height: 300px;
+}
+
+.question{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -16px;
+    color: #000;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 60px;
+    color: #000;
+}
+
+label {
+     position: relative;
+    font-size: 35px;
+    font-weight: bold;
+    width: 40%;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.customRadio {
+    position: absolute;
+    top: 5px;
+    bottom: 0;
+    left: 15px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #fff;
+    transition: all 0.5s linear;
+}
+
+.customRadio:hover {
+    background-color: #000;
+}
+
+input:checked ~ .customRadio {
+    border: 2px solid #000;
+    background-color: #fff;
+}
+
+/* Style checkmark */
+label .customRadio::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: solid #000;
+    background-color: #000;
+    -webkit-transition: all 1s linear;
+    transition: all 0.3s linear;
+}
+
+/* Show checkmark when checked */
+input:checked ~ .customRadio::after {
+    opacity: 1;
+}
+
+#progress-wrap {
+    position: relative;
+    border: 3px solid #000;
+    width: 45%;
+    height: 10px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+#progress-bar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    transition: 0.3s width linear;
+}
+
+button{
+    font-family: "Bahiana",sans-serif;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    outline: none;
+    margin-top: 25px;
+    -webkit-box-shadow: 0px 7px 8px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 7px 8px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 7px 8px 0px rgba(0,0,0,0.5);
+}
+
+button:hover{
+    transform-origin: bottom;
+    transform: scaleY(0.95) translateY(1.5px);
+}
+
+button:active {
+    transform-origin: bottom;
+    transform: scaleY(0.89) translateY(1.3px);
+}
+
+#results {
+    font-size: 25px;
+    color: #000;
+}
+
+/* CSS positioning to make the slides sit as layers on top of one another
+    Uses z-indexs and opacity to fade in and out */
+.slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.active-slide{
+    opacity: 1;
+    z-index: 2;
+}
+
+/* media quries */
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    #header {
+        font-size: 70px;
+    }
+
+    .question {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    label {
+        width: 60%;
+    }
+
+    #progress-wrap {
+        margin-top: 50px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    label {
+        width: 100%;
+    }
+}
+#loading {
+    visibility: visible;
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+#loading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100
+}
